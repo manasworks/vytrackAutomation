@@ -21,31 +21,20 @@ public class All_Methods_test extends TestBase {
     groups
      */
 
-    @Test (dataProvider = "managers")
+    @Test (dataProvider = "userTypes")
     public void testName(String username) {
-        //Instantiating Actions class
-        Actions actions = new Actions(Driver.getDriver());
 
         VytrackUtils.login(username);
-
         TopMenu topMenu = new TopMenu();
         VehicleModel vehicleModel = new VehicleModel();
-
-        actions.moveToElement(topMenu.activitiesLink).perform();
-
-        BrowserUtils.sleep(1);
-
+        Actions actions = new Actions(Driver.getDriver());
 
         /* You can also use
               .login("your username") without dataProvider
               .login("your username", "your password") without dataProvider
               .login() will login as user31
          */
-        /*
 
-        // Each test initial setup. Login to the VY Track and waits till page is loaded
-
-        BrowserUtils.find("//a[@title='Fleet Management']");
 
         // Verify the title of the page
         BrowserUtils.verifyTitle("Dashboard");
@@ -56,11 +45,8 @@ public class All_Methods_test extends TestBase {
         actions.moveToElement(topMenu.fleetLink).perform();
         topMenu.fleetSub_VehiclesModels.click();
 
-        BrowserUtils.sleep(2);
 
-        System.out.println("vehicleModel.column1.getText() = " + vehicleModel.column9.getText());
 
-         */
 
 
 

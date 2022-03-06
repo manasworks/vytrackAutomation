@@ -28,20 +28,4 @@ public class BrowserUtils{
     public static void verifyTitleContains(String expectedTitle){
         Assert.assertTrue(Driver.getDriver().getTitle().contains(expectedTitle));
     }
-
-    // This method find the element by Xpath, CSS or ID
-    // and waits until element is loaded to the page
-    public static WebElement find(String locator){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-        WebElement element;
-        if (locator.contains("//")){
-            element = Driver.getDriver().findElement(By.xpath(locator));
-        } else if ( (locator.contains("[") || locator.contains("#") || locator.contains(".")) && !locator.contains("//")){
-            element = Driver.getDriver().findElement(By.cssSelector(locator));
-        } else {
-            element = Driver.getDriver().findElement(By.id(locator));
-        }
-        wait.until(ExpectedConditions.visibilityOf(element));
-        return element;
-    }
 }

@@ -1,6 +1,7 @@
 package com.vytrack.utilities;
 
 import com.vytrack.pages.LoginPage;
+import com.vytrack.pages.TopMenu;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,13 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class VytrackUtils {
 
-    private static String username = ConfigurationReader.getProperty("username1");
+    private static String username = ConfigurationReader.getProperty("username2");
     private static String password = ConfigurationReader.getProperty("password");
 
     //This method will log in to CRM, if no username and password provided will use Data from Configuration properties
     public static void login(){
         // Calling webElements from Login Page
         LoginPage loginPage = new LoginPage();
+        TopMenu topMenu = new TopMenu();
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         //3. Enter valid username
@@ -32,13 +34,14 @@ public class VytrackUtils {
         loginPage.loginButton.click();
 
         // Verify login successful
-        BrowserUtils.find("//a[@title='Fleet Management']");
+        wait.until(ExpectedConditions.visibilityOf(topMenu.homeButton));
         BrowserUtils.verifyTitle("Dashboard");
     }
 
     public static void login(String username, String password){
         // Calling webElements from Login Page
         LoginPage loginPage = new LoginPage();
+        TopMenu topMenu = new TopMenu();
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         //3. Enter valid username
@@ -57,13 +60,14 @@ public class VytrackUtils {
         loginPage.loginButton.click();
 
         // Verify login successful
-        BrowserUtils.find("//a[@title='Fleet Management']");
+        wait.until(ExpectedConditions.visibilityOf(topMenu.homeButton));
         BrowserUtils.verifyTitle("Dashboard");
     }
 
     public static void login(String username){
         // Calling webElements from Login Page
         LoginPage loginPage = new LoginPage();
+        TopMenu topMenu = new TopMenu();
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
@@ -82,7 +86,7 @@ public class VytrackUtils {
         loginPage.loginButton.click();
 
         // Verify login successful
-        BrowserUtils.find("//a[@title='Fleet Management']");
+        wait.until(ExpectedConditions.visibilityOf(topMenu.homeButton));
         BrowserUtils.verifyTitle("Dashboard");
     }
 
