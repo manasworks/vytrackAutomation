@@ -13,7 +13,10 @@ public class VehicleModel {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (xpath = "//th/*/span[1]") public List<WebElement> headerCells;
-    @FindBy (xpath = "//td[@class='string-cell grid-cell grid-body-cell grid-body-cell-Vendors']") public WebElement lastCell;
+    @FindBy (xpath = "//th/*/span[1]")
+    public List<WebElement> headerCells;
+
+    @FindBy (xpath = "//td[@class='string-cell grid-cell grid-body-cell grid-body-cell-Vendors']")
+    public WebElement lastCell;
 
 }
