@@ -15,6 +15,14 @@ public class TopMenu {
     @FindBy (xpath = "//h1//a[@title='Fleet Management']")
     public WebElement homeButton;
 
+    // Warning Message
+    @FindBy (xpath = "//div[@class='message']")
+    public WebElement warningMessage;
+
+    // Warning message close button
+    @FindBy (xpath = "//button[@class='close']")
+    public WebElement warningCloseBtn;
+
     // Main Menu Elements
     @FindBy (xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Dashboard')]")
     public WebElement dashboardLink;
