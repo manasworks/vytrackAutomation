@@ -2,6 +2,7 @@ package com.vytrack.tests;
 
 import com.vytrack.pages.TopMenu;
 import com.vytrack.pages.VehicleCosts;
+import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VytrackUtils;
 import org.openqa.selenium.WebElement;
@@ -52,7 +53,7 @@ public class CY19_75 extends TestBase{
         Assert.assertEquals(actualHeaders, expectedHeaders);
     }
 
-    @Test (dataProvider = "userTypes")
+    @Test (dataProvider = "userTypes", dependsOnMethods={"testVehicleCostsPage"})
     public void testVehicleCostsCheckboxes(String username) {
         //AC #2: users check the first checkbox to check all the Vehicle Costs
 
@@ -89,5 +90,47 @@ public class CY19_75 extends TestBase{
         for (WebElement each : vehicleCosts.allCheckBoxes) {
             Assert.assertFalse(each.isSelected());
         }
+    }
+
+    @Test (dataProvider = "userTypes", dependsOnMethods={"testVehicleCostsPage"})
+    public void testVehicleCostsTableFilters(String username) {
+
+        //AC #3: users should be able to use table filters
+
+        VytrackUtils.login(username);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        Actions actions = new Actions(Driver.getDriver());
+        TopMenu topMenu = new TopMenu();
+        VehicleCosts vehicleCosts = new VehicleCosts();
+
+        // 1. Navigate over Fleet link
+        wait.until(ExpectedConditions.visibilityOf(topMenu.fleetLink));
+        Assert.assertTrue(topMenu.fleetLink.isDisplayed());
+        actions.moveToElement(topMenu.fleetLink).perform();
+
+        // 2. Select and click Vehicle Costs page
+        wait.until(ExpectedConditions.visibilityOf(topMenu.fleetSub_VehiclesCosts));
+        Assert.assertTrue(topMenu.fleetSub_VehiclesCosts.isDisplayed());
+        topMenu.fleetSub_VehiclesCosts.click();
+
+        // 3. Validate second Filter by Price is working
+        String oldValue = vehicleCosts.cellDate.getText();
+        vehicleCosts.thirdFilter.click();
+        BrowserUtils.sleep(1);
+        String newValue = vehicleCosts.cellDate.getText();
+        Assert.assertNotEquals(oldValue, newValue);
+
+        // 4. Validate first Filter by Type is working
+        oldValue = vehicleCosts.cellType.getText();
+        vehicleCosts.firstFilter.click();
+        BrowserUtils.sleep(1);
+        newValue = vehicleCosts.cellType.getText();
+        Assert.assertNotEquals(oldValue, newValue);
+
+        // 5. Validate second Filter by Price is working
+        oldValue = vehicleCosts.cellPrice.getText();
+        vehicleCosts.secondFilter.click();
+        BrowserUtils.sleep(1);
+        newValue = vehicleCosts.cellPrice.getText();
     }
 }
