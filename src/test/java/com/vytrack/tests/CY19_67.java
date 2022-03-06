@@ -87,6 +87,5 @@ public class CY19_67 extends TestBase{
         String expectedWarning = "You do not have permission to perform this action.";
 
         Assert.assertEquals(actualWarning, expectedWarning);
-
     }
 }
