@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class TopMenu {
 
     public TopMenu(){
@@ -24,6 +26,10 @@ public class TopMenu {
     public WebElement warningCloseBtn;
 
     // Main Menu Elements
+
+    @FindBy (xpath = "//span[@class='title title-level-1']")
+    public List<WebElement> allModuleElements;
+
     @FindBy (xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Dashboard')]")
     public WebElement dashboardLink;
 
