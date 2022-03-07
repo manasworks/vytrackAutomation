@@ -113,14 +113,14 @@ public class CY19_75 extends TestBase{
         Assert.assertTrue(topMenu.fleetSub_VehiclesCosts.isDisplayed());
         topMenu.fleetSub_VehiclesCosts.click();
 
-        // 3. Validate second Filter by Price is working
+        // 3. Validate Filter by Date is working
         String oldValue = vehicleCosts.cellDate.getText();
         vehicleCosts.thirdFilter.click();
         BrowserUtils.sleep(1);
         String newValue = vehicleCosts.cellDate.getText();
         Assert.assertNotEquals(oldValue, newValue);
 
-        // 4. Validate first Filter by Type is working
+        // 4. Validate Filter by Type is working
         oldValue = vehicleCosts.cellType.getText();
         vehicleCosts.firstFilter.click();
         BrowserUtils.sleep(1);
@@ -132,5 +132,6 @@ public class CY19_75 extends TestBase{
         vehicleCosts.secondFilter.click();
         BrowserUtils.sleep(1);
         newValue = vehicleCosts.cellPrice.getText();
+        Assert.assertNotEquals(oldValue, newValue);
     }
 }
