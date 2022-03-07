@@ -61,6 +61,7 @@ public abstract class TestBase {
         };
     }
 
+    // Data for All Managers users
     @DataProvider(name="managers")
     public Object[][] managers(){
         return new Object[][]{
