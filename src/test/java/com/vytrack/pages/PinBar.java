@@ -5,14 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PinBarHelp {
+public class PinBar {
 
-    public PinBarHelp(){
+    public PinBar(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (xpath = "//div[@class='clearfix']/h3") public WebElement topicPinBar;
+    @FindBy (xpath = "//div[@class='clearfix']/h3") public WebElement topic;
     @FindBy (xpath = "//button[@title='Pin/unpin the page']") public WebElement pinBarButton;
     @FindBy (xpath = "//li[@class='pin-holder active']/a[.='How To Use Pinbar']") public WebElement pinHolder;
-    @FindBy (xpath = "//button[@class='btn-close fa-close']") public WebElement closeButton;
+    @FindBy (xpath = "//img") public WebElement image;
 }
