@@ -14,8 +14,8 @@ public class TopMenu {
     }
 
     // HomeButton
-    @FindBy (xpath = "//h1//a[@title='Fleet Management']")
-    public WebElement homeButton;
+    @FindBy (xpath = "//h1//a[@title='Fleet Management']") public WebElement homeButton;
+    @FindBy (xpath = "//div/a[@href='/pinbar/help']") public WebElement pinBarHelp;
 
     // Top right icons
     @FindBy (xpath = "//a[@class='help no-hash']") public WebElement getHelpIcon;
