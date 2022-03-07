@@ -17,6 +17,9 @@ public class TopMenu {
     @FindBy (xpath = "//h1//a[@title='Fleet Management']")
     public WebElement homeButton;
 
+    // Top right icons
+    @FindBy (xpath = "//a[@class='help no-hash']") public WebElement getHelpIcon;
+
     // Warning Message
     @FindBy (xpath = "//div[@class='message']")
     public WebElement warningMessage;
@@ -26,7 +29,6 @@ public class TopMenu {
     public WebElement warningCloseBtn;
 
     // Main Menu Elements
-
     @FindBy (xpath = "//span[@class='title title-level-1']")
     public List<WebElement> allModuleElements;
 
@@ -84,5 +86,5 @@ public class TopMenu {
     @FindBy (xpath = "//span[.='Manage Dashboards']/../..")
     public WebElement dashboardSub_ManageDashboards;
 
-    //
+
 }
