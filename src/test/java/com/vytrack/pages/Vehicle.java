@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class Vehicle {
 
     public Vehicle (){
@@ -12,8 +14,7 @@ public class Vehicle {
     }
 
     @FindBy (xpath = "//tr[1]//div[@class='more-bar-holder']/div") public WebElement dots;
-    @FindBy (xpath = "//tr[1]//div[@class='more-bar-holder']//li[1]/a") public WebElement icon1;
-    @FindBy (xpath = "//tr[1]//div[@class='more-bar-holder']//li[2]/a") public WebElement icon2;
-    @FindBy (xpath = "//tr[1]//div[@class='more-bar-holder']//li[3]/a") public WebElement icon3;
-    @FindBy (xpath = "//tr[25]//td[20]") public WebElement lastCell;
+    @FindBy (xpath = "//li[@class='launcher-item']/a") public List<WebElement> iconsList;
+    @FindBy (xpath = "//tr[20]//td[20]") public WebElement lastCell;
+
 }

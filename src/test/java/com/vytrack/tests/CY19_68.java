@@ -5,6 +5,7 @@ import com.vytrack.pages.Vehicle;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VytrackUtils;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -31,11 +32,10 @@ public class CY19_68 extends TestBase{
         wait.until(ExpectedConditions.visibilityOf(vehicle.lastCell));
         BrowserUtils.sleep(0.5);
         actions.moveToElement(vehicle.dots).perform();
-        BrowserUtils.sleep(1);
 
         // Validate “view, edit, delete” is displayed
-        Assert.assertTrue(vehicle.icon1.isDisplayed());
-        Assert.assertTrue(vehicle.icon2.isDisplayed());
-        Assert.assertTrue(vehicle.icon3.isDisplayed());
+        for (WebElement element : vehicle.iconsList) {
+            Assert.assertTrue(element.isDisplayed());
+        }
     }
 }
