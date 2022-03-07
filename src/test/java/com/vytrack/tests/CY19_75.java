@@ -60,7 +60,9 @@ public class CY19_75 extends TestBase{
         VytrackUtils.login(username);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         Actions actions = new Actions(Driver.getDriver());
+
         TopMenu topMenu = new TopMenu();
+
         VehicleCosts vehicleCosts = new VehicleCosts();
 
         // 1. Navigate over Fleet link
