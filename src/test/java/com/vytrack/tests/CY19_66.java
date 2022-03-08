@@ -44,6 +44,9 @@ public class CY19_66 extends TestBase{
         Actions actions = new Actions(Driver.getDriver());
         TopMenu topMenu = new TopMenu();
 
+        // Click homepage to get rid of error messages
+        if (topMenu.warningCloseBtn.isDisplayed()) topMenu.warningCloseBtn.click();
+
         // Go to the Vehicle Contacts page
         actions.moveToElement(topMenu.fleetLink).perform();
         topMenu.fleetSub_VehiclesContracts.click();
