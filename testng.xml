@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Test Suite-Group19" >
+    <test name="Test All User Stories" >
+        <classes>
+
+            <class name="com.vytrack.tests.CY19_63" />
+            <class name="com.vytrack.tests.CY19_64" />
+            <class name="com.vytrack.tests.CY19_65" />
+            <class name="com.vytrack.tests.CY19_66" />
+            <class name="com.vytrack.tests.CY19_67" />
+            <class name="com.vytrack.tests.CY19_68" />
+            <class name="com.vytrack.tests.CY19_69" />
+            <class name="com.vytrack.tests.CY19_70" />
+            <class name="com.vytrack.tests.CY19_71" />
+            <class name="com.vytrack.tests.CY19_72" />
+            <class name="com.vytrack.tests.CY19_73" />
+            <class name="com.vytrack.tests.CY19_74" />
+            <class name="com.vytrack.tests.CY19_75" />
+            <class name="com.vytrack.tests.CY19_76" />
+
+        </classes>
+    </test>
+</suite>
