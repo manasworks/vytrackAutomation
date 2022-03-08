@@ -77,6 +77,7 @@ public class CY19_75 extends TestBase{
 
         // Validate users check the first checkbox to check all the Vehicle Costs
         // 3. Click first CheckBox to select all checkboxes
+        BrowserUtils.sleep(0.5);
         wait.until(ExpectedConditions.visibilityOf(vehicleCosts.firstCheckBox));
         vehicleCosts.firstCheckBox.click();
 

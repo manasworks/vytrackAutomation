@@ -2,6 +2,7 @@ package com.vytrack.tests;
 
 import com.vytrack.pages.Calendar;
 import com.vytrack.pages.TopMenu;
+import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VytrackUtils;
 import org.openqa.selenium.Keys;
@@ -34,6 +35,7 @@ public class CY19_71 extends TestBase{
         calendar.createEvent.click();
 
         // Click on Repeat Checkbox
+        BrowserUtils.sleep(0.5);
         wait.until(ExpectedConditions.visibilityOf(calendar.repeatCheckbox));
         calendar.repeatCheckbox.click();
 
