@@ -56,4 +56,7 @@ public class TopMenu {
     // Customers sub elements
     @FindBy (xpath = "//span[.='Accounts']/../..") public WebElement customersSubAccounts;
 
+    // Marketing sub elements
+    @FindBy (xpath = "//span[.='Campaigns']/../..") public WebElement marketingSubCampaigns;
+
 }
