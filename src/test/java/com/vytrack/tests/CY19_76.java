@@ -1,12 +1,9 @@
 package com.vytrack.tests;
 
-import com.vytrack.pages.Accounts;
 import com.vytrack.pages.Campaigns;
 import com.vytrack.pages.TopMenu;
-import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VytrackUtils;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
