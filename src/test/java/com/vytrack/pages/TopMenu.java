@@ -86,5 +86,7 @@ public class TopMenu {
     @FindBy (xpath = "//span[.='Manage Dashboards']/../..")
     public WebElement dashboardSub_ManageDashboards;
 
+    // Activities sub elements
+    @FindBy (xpath = "//span[.='Calendar Events']/../..") public WebElement activitiesSubCalendar;
 
 }
