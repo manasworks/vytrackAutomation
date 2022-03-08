@@ -50,6 +50,7 @@ public class CY19_66 extends TestBase{
         // Go to the Vehicle Contacts page
         actions.moveToElement(topMenu.fleetLink).perform();
         topMenu.fleetSub_VehiclesContracts.click();
+        BrowserUtils.sleep(0.5);
 
         // Validate Drivers sees error message
         Assert.assertTrue(topMenu.warningMessage.isDisplayed());
