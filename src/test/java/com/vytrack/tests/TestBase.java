@@ -66,9 +66,9 @@ public abstract class TestBase {
     public Object[][] managers(){
         return new Object[][]{
                 {ConfigurationReader.getProperty("username2")},
-                {ConfigurationReader.getProperty("username5")},
-                {ConfigurationReader.getProperty("username3")},
-                {ConfigurationReader.getProperty("username6")},
+               // {ConfigurationReader.getProperty("username5")},
+               // {ConfigurationReader.getProperty("username3")},
+               // {ConfigurationReader.getProperty("username6")},
         };
     }
 
