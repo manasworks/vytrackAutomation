@@ -16,4 +16,7 @@ public class Calendar {
     @FindBy (xpath = "//input[@class='recurrence-subview-control__number']") public WebElement daysInput;
     @FindBy (xpath = "//span[@class='validation-failed']/span/span") public WebElement errorMessage;
     @FindBy (xpath = "//input[@name='oro_calendar_event_form[title]']") public WebElement inputTitle;
+    @FindBy (xpath = "//iframe") public WebElement iframe;
+    @FindBy (xpath = "//body") public WebElement textBody;
+    @FindBy (xpath = "//p") public WebElement message;
 }
