@@ -17,7 +17,7 @@ import java.util.List;
 
 public class CY19_74 extends TestBase{
 
-    @Test (dataProvider = "userTypes")
+    @Test (dataProvider = "managers")
     public void testAccountsPage(String username) {
 
         //AC1: users should see 8 filter items on the Accounts page
