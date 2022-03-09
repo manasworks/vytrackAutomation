@@ -1,6 +1,7 @@
 package com.vytrack.tests;
 
 import com.vytrack.pages.TopMenu;
+import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VytrackUtils;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,6 +28,7 @@ public class CY19_64 extends TestBase{
         topMenu.getHelpIcon.click();
 
         // Switch to new Window.
+        BrowserUtils.sleep(1);
         for(String each: Driver.getDriver().getWindowHandles()){
             Driver.getDriver().switchTo().window(each);
         }

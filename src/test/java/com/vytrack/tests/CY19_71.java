@@ -65,6 +65,7 @@ public class CY19_71 extends TestBase{
 
         // Go to Calendar page
         actions.moveToElement(topMenu.activitiesLink).perform();
+        BrowserUtils.sleep(0.5);
         topMenu.activitiesSubCalendar.click();
 
         // Click create New Calendar Event

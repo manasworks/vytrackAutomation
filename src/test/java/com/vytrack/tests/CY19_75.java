@@ -53,7 +53,7 @@ public class CY19_75 extends TestBase{
         Assert.assertEquals(actualHeaders, expectedHeaders);
     }
 
-    @Test (dataProvider = "userTypes", dependsOnMethods={"testVehicleCostsPage"})
+    @Test (dataProvider = "managers", dependsOnMethods={"testVehicleCostsPage"})
     public void testVehicleCostsCheckboxes(String username) {
         //AC #2: users check the first checkbox to check all the Vehicle Costs
 

@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 public class CY19_69 extends TestBase{
 
-    @Test (dataProvider = "userTypes")
+    @Test (dataProvider = "managers")
     public void testAllCheckBoxesUnchecked(String username) {
         //AC #1: once the user launched to the Vehicle page, all the checkboxes should be unchecked
 
@@ -40,7 +40,7 @@ public class CY19_69 extends TestBase{
         }
     }
 
-    @Test (dataProvider = "userTypes")
+    @Test (dataProvider = "managers")
     public void testFirstCheckbox(String username) {
         //AC #2: user check the first checkbox to check all the cars
 
@@ -66,7 +66,7 @@ public class CY19_69 extends TestBase{
         }
     }
 
-    @Test (dataProvider = "userTypes")
+    @Test (dataProvider = "managers")
     public void testRandomCarSelected(String username) {
         //AC #3: users can select any car
 
