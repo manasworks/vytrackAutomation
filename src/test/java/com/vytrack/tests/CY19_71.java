@@ -35,7 +35,7 @@ public class CY19_71 extends TestBase{
         calendar.createEvent.click();
 
         // Click on Repeat Checkbox
-        BrowserUtils.sleep(0.5);
+        //BrowserUtils.sleep(0.5);
         wait.until(ExpectedConditions.visibilityOf(calendar.repeatCheckbox));
         calendar.repeatCheckbox.click();
 
