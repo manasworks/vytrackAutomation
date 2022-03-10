@@ -34,6 +34,7 @@ public class CY19_64 extends TestBase{
         }
 
         // Validate user on Oronic Documentation page
+        BrowserUtils.sleep(1);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://doc.oroinc.com/");
 
         // Switch back to VyTrack page
