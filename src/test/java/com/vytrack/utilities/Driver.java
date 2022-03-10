@@ -19,6 +19,11 @@ public class Driver {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
         if (driver==null){
             String browserType = ConfigurationReader.getProperty("browser");
             switch (browserType){
