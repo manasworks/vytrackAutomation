@@ -12,6 +12,11 @@ public class VytrackUtils {
     private static String username = ConfigurationReader.getProperty("username2");
     private static String password = ConfigurationReader.getProperty("password");
 
+    // Method to navigate through main menu
+    public static void navigateTo(String pageName){
+
+    }
+
     //This method will log in to CRM, if no username and password provided will use Data from Configuration properties
     public static void login(){
         // Calling webElements from Login Page
@@ -30,7 +35,7 @@ public class VytrackUtils {
         loginPage.passwordInput.sendKeys(password);
 
         //5. Click to Log In button
-        wait.until(ExpectedConditions.visibilityOf(loginPage.loginButton));
+        wait.until(ExpectedConditions.elementToBeClickable(loginPage.loginButton));
         loginPage.loginButton.click();
 
         // Verify login successful
@@ -102,5 +107,15 @@ public class VytrackUtils {
         WebElement logoutBtn = Driver.getDriver().findElement(By.xpath("//a[.='Logout']"));
         wait.until(ExpectedConditions.visibilityOf(logoutBtn));
         logoutBtn.click();
+    }
+
+    public static void waitTillLoaderMaskDisappear() {
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+            WebElement loaderMask = Driver.getDriver().findElement(By.cssSelector("div[class='loader-mask shown']"));
+            wait.until(ExpectedConditions.invisibilityOf(loaderMask));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

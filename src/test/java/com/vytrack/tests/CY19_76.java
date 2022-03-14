@@ -2,6 +2,7 @@ package com.vytrack.tests;
 
 import com.vytrack.pages.Campaigns;
 import com.vytrack.pages.TopMenu;
+import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VytrackUtils;
 import org.openqa.selenium.WebElement;
@@ -77,9 +78,13 @@ public class CY19_76 extends TestBase{
         campaigns.manageFilters.click();
 
         // Validate any amount of boxes should be unchecked. (can check only 1, or multiple)
-        for (int i = 0; i < 5; i++) campaigns.filterCheckboxes.get(i).click();
+        for (int i = 0; i < campaigns.filterCheckboxes.size(); i++) {
+            campaigns.filterCheckboxes.get(i).click();
+            BrowserUtils.sleep(1);
+        }
 
         for (WebElement each : campaigns.filterCheckboxes) {
+            wait.until(ExpectedConditions.elementToBeClickable(each));
             Assert.assertFalse(each.isSelected());
         }
 
